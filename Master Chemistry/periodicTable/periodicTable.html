@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>academicSearcher</title>
+    <script src="periodicTable.js" defer></script>
+    <link rel="stylesheet" href="periodicTable.css">
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Periodic Table Selector</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="title">
+    <h1>Welcome to Periodic Table Tool</h1>
+  </div>
+  
+  <div class="infoPopUp" id="infoPopUp"> 
+    <div id="placeHolderName"></div>
+    <div id="topSymbol"></div>
+    <div id="elementName"></div>
+    <div id="amu"></div>
+    <div id="groupDefinition"></div>
+    <div id="electroNegativity"></div>
+    <div id="atomicRadius"></div>
+    <button class="button" onclick="closeInfo()">OK</button>
+  </div>
+
+
+  <div class="periodicTable">
+    <!-- ----------------------------------------------------- -->
+    <!--KEY for element GROUPS (horizontal section of elements) -->
+    <div id="groupKey1">
+      <div class="key">
+        <div class="keyBox" style="background-color: #FF6868;"></div>
+        <span>Alkalai Metal<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #CA8BFF;"></div>
+        <span>Alkaline Earth Metal<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #68D8FF;"></div>
+        <span>Transition Metal<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #B3FF02;"></div>
+        <span>Post Transition Metal<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #FF5DFF;"></div>
+        <span>Metalloid<span>
+      </div>
+    </div>
+
+    <div id="groupKey2">
+      <div class="key">
+        <div class="keyBox" style="background-color: yellow;"></div>
+        <span>Nonmetal<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #00FBFF;"></div>
+        <span>Halogen<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #FFC860;"></div>
+        <span>Noble Gas<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #827CFF;"></div>
+        <span>Lanthanides<span>
+      </div>
+
+      <div class="key">
+        <div class="keyBox" style="background-color: #DC143C;"></div>
+        <span>Actinides<span>
+      </div>
+    </div>
+    <!-- ----------------------------------------------------- -->
+    
+    <!-- ----------------------------------------------------- -->
+    <!-- key for electronegativity/atomic radius/ionization energy trend -->
+    <div id="trendKey">
+      <div id="trendGradient">Weak ------------------> Strong</div>
+    </div>
+    <!-- ----------------------------------------------------- -->
+
+    <div class="nonmetal" id="hydrogen" onclick="openInfo(0)">
+      <div class="elementNumber">1</div>
+      <div class="symbol">H</div>
+      <div class="amu">1.01</div>
+    </div>
+    <div class="nobleGas" id="helium" onclick="openInfo(1)">
+      <div class="elementNumber">2</div>
+      <div class="symbol">He</div>
+      <div class="amu">4.00</div>
+    </div>
+    <div class="alkalaiMetal" id="lithium" onclick="openInfo(2)">
+      <div class="elementNumber">3</div>
+      <div class="symbol">Li</div>
+      <div class="amu">6.94</div>
+    </div>
+    <div class="alkalineEarthMetal" id="beryllium" onclick="openInfo(3)">
+      <div class="elementNumber">4</div>
+      <div class="symbol">Be</div>
+      <div class="amu">9.01</div>
+    </div>
+    <div class="metalloid" id="boron" onclick="openInfo(4)">
+      <div class="elementNumber">5</div>
+      <div class="symbol">B</div>
+      <div class="amu">10.81</div>
+    </div>
+    <div class="nonmetal" id="carbon" onclick="openInfo(5)">
+      <div class="elementNumber">6</div>
+      <div class="symbol">C</div>
+      <div class="amu">12.01</div>
+    </div>
+        <div class="nonmetal" id="nitrogen" onclick="openInfo(6)">
+      <div class="elementNumber">7</div>
+      <div class="symbol">N</div>
+      <div class="amu">14.01</div>
+    </div>
+    <div class="nonmetal" id="oxygen" onclick="openInfo(7)">
+      <div class="elementNumber">8</div>
+      <div class="symbol">O</div>
+      <div class="amu">16.00</div>
+    </div>
+    <div class="halogen" id="fluorine" onclick="openInfo(8)">
+      <div class="elementNumber">9</div>
+      <div class="symbol">F</div>
+      <div class="amu">19.00</div>
+    </div>
+    <div class="nobleGas" id="neon" onclick="openInfo(9)">
+      <div class="elementNumber">10</div>
+      <div class="symbol">Ne</div>
+      <div class="amu">20.18</div>
+    </div>
+    <div class="alkalaiMetal" id="sodium" onclick="openInfo(10)">
+      <div class="elementNumber">11</div>
+      <div class="symbol">Na</div>
+      <div class="amu">22.99</div>
+    </div>
+    <div class="alkalineEarthMetal" id="magnesium" onclick="openInfo(11)">
+      <div class="elementNumber">12</div>
+      <div class="symbol">Mg</div>
+      <div class="amu">24.31</div>
+    </div>
+    <div class="postTransitionMetal" id="aluminum" onclick="openInfo(12)">
+      <div class="elementNumber">13</div>
+      <div class="symbol">Al</div>
+      <div class="amu">26.98</div>
+    </div>
+    <div class="metalloid" id="silicon" onclick="openInfo(13)">
+      <div class="elementNumber">14</div>
+      <div class="symbol">Si</div>
+      <div class="amu">28.09</div>
+    </div>
+    <div class="nonmetal" id="phosphorus" onclick="openInfo(14)">
+      <div class="elementNumber">15</div>
+      <div class="symbol">P</div>
+      <div class="amu">30.97</div>
+    </div>
+    <div class="nonmetal" id="sulfur" onclick="openInfo(15)">
+      <div class="elementNumber">16</div>
+      <div class="symbol">S</div>
+      <div class="amu">32.07</div>
+    </div>
+    <div class="halogen" id="chlorine" onclick="openInfo(16)">
+      <div class="elementNumber">17</div>
+      <div class="symbol">Cl</div>
+      <div class="amu">35.45</div>
+    </div>
+    <div class="nobleGas" id="argon" onclick="openInfo(17)">
+      <div class="elementNumber">18</div>
+      <div class="symbol">Ar</div>
+      <div class="amu">39.95</div>
+    </div>
+    <div class="alkalaiMetal" id="potassium" onclick="openInfo(18)">
+      <div class="elementNumber">19</div>
+      <div class="symbol">K</div>
+      <div class="amu">39.10</div>
+    </div>
+    <div class="alkalineEarthMetal" id="calcium" onclick="openInfo(19)">
+      <div class="elementNumber">20</div>
+      <div class="symbol">Ca</div>
+      <div class="amu">40.08</div>
+    </div>
+    <div class="transitionMetal" id="scandium" onclick="openInfo(20)">
+      <div class="elementNumber">21</div>
+      <div class="symbol">Sc</div>
+      <div class="amu">44.96</div>
+    </div>
+    <div class="transitionMetal" id="titanium" onclick="openInfo(21)">
+      <div class="elementNumber">22</div>
+      <div class="symbol">Ti</div>
+      <div class="amu">47.87</div>
+    </div>
+    <div class="transitionMetal" id="vanadium" onclick="openInfo(22)">
+      <div class="elementNumber">23</div>
+      <div class="symbol">V</div>
+      <div class="amu">50.94</div>
+    </div>
+    <div class="transitionMetal" id="chromium" onclick="openInfo(23)">
+      <div class="elementNumber">24</div>
+      <div class="symbol">Cr</div>
+      <div class="amu">52.00</div>
+    </div>
+    <div class="transitionMetal" id="manganese" onclick="openInfo(24)">
+        <div class="elementNumber">25</div>
+      <div class="symbol">Mn</div>
+      <div class="amu">54.94</div>
+    </div>
+    <div class="transitionMetal" id="iron" onclick="openInfo(25)">
+      <div class="elementNumber">26</div>
+      <div class="symbol">Fe</div>
+      <div class="amu">55.85</div>
+    </div>
+    <div class="transitionMetal" id="cobalt" onclick="openInfo(26)">
+      <div class="elementNumber">27</div>
+      <div class="symbol">Co</div>
+      <div class="amu">58.93</div>
+    </div>
+    <div class="transitionMetal" id="nickel" onclick="openInfo(27)">
+      <div class="elementNumber">28</div>
+      <div class="symbol">Ni</div>
+      <div class="amu">58.69</div>
+    </div>
+    <div class="transitionMetal" id="copper" onclick="openInfo(28)">
+      <div class="elementNumber">29</div>
+      <div class="symbol">Cu</div>
+      <div class="amu">63.55</div>
+    </div>
+    <div class="transitionMetal" id="zinc" onclick="openInfo(29)">
+      <div class="elementNumber">30</div>
+      <div class="symbol">Zn</div>
+      <div class="amu">65.38</div>
+    </div>
+    <div class="postTransitionMetal" id="gallium" onclick="openInfo(30)">
+      <div class="elementNumber">31</div>
+      <div class="symbol">Ga</div>
+      <div class="amu">69.72</div>
+    </div>
+    <div class="metalloid" id="germanium" onclick="openInfo(31)">
+      <div class="elementNumber">32</div>
+      <div class="symbol">Ge</div>
+      <div class="amu">72.63</div>
+    </div>
+    <div class="metalloid" id="arsenic" onclick="openInfo(32)">
+      <div class="elementNumber">33</div>
+      <div class="symbol">As</div>
+      <div class="amu">74.92</div>
+    </div>
+    <div class="nonmetal" id="selenium" onclick="openInfo(33)">
+      <div class="elementNumber">34</div>
+      <div class="symbol">Se</div>
+      <div class="amu">78.96</div>
+    </div>
+    <div class="halogen" id="bromine" onclick="openInfo(34)">
+      <div class="elementNumber">35</div>
+      <div class="symbol">Br</div>
+      <div class="amu">79.90</div>
+    </div>
+    <div class="nobleGas" id="krypton" onclick="openInfo(35)">
+      <div class="elementNumber">36</div>
+      <div class="symbol">Kr</div>
+      <div class="amu">83.90</div>
+    </div>
+    <div class="alkalaiMetal" id="rubidium"onclick="openInfo(36)">
+      <div class="elementNumber">37</div>
+      <div class="symbol">Rb</div>
+      <div class="amu">85.47</div>
+    </div>
+    <div class="alkalineEarthMetal" id="strontium" onclick="openInfo(37)">
+      <div class="elementNumber">38</div>
+      <div class="symbol">Sr</div>
+      <div class="amu">87.62</div>
+    </div>
+    <div class="transitionMetal" id="yttrium" onclick="openInfo(38)">
+      <div class="elementNumber">39</div>
+      <div class="symbol">Y</div>
+      <div class="amu">88.91</div>
+    </div>
+    <div class="transitionMetal" id="zirconium" onclick="openInfo(39)">
+      <div class="elementNumber">40</div>
+      <div class="symbol">Zr</div>
+      <div class="amu">91.22</div>
+    </div>
+    <div class="transitionMetal" id="niobium" onclick="openInfo(40)">
+      <div class="elementNumber">41</div>
+      <div class="symbol">Nb</div>
+      <div class="amu">92.91</div>
+    </div>
+    <div class="transitionMetal" id="molybdenum" onclick="openInfo(41)">
+      <div class="elementNumber">42</div>
+      <div class="symbol">Mo</div>
+      <div class="amu">95.96</div>
+    </div>
+    <div class="transitionMetal" id="technetium" onclick="openInfo(42)">
+      <div class="elementNumber">43</div>
+      <div class="symbol">Tc</div>
+      <div class="amu">98.00</div>
+    </div>
+    <div class="transitionMetal" id="ruthenium" onclick="openInfo(43)">
+      <div class="elementNumber">44</div>
+      <div class="symbol">Ru</div>
+      <div class="amu">101.07</div>
+    </div>
+    <div class="transitionMetal" id="rhodium" onclick="openInfo(44)">
+      <div class="elementNumber">45</div>
+      <div class="symbol">Rh</div>
+      <div class="amu">102.91</div>
+    </div>
+    <div class="transitionMetal" id="palladium" onclick="openInfo(45)">
+      <div class="elementNumber">46</div>
+      <div class="symbol">Pd</div>
+      <div class="amu">106.42</div>
+    </div>
+    <div class="transitionMetal" id="silver" onclick="openInfo(46)">
+      <div class="elementNumber">47</div>
+      <div class="symbol">Ag</div>
+      <div class="amu">107.87</div>
+    </div>
+    <div class="transitionMetal" id="cadmium" onclick="openInfo(47)">
+      <div class="elementNumber">48</div>
+      <div class="symbol">Cd</div>
+      <div class="amu">112.41</div>
+    </div>
+    <div class="postTransitionMetal" id="indium" onclick="openInfo(48)">
+      <div class="elementNumber">49</div>
+      <div class="symbol">In</div>
+      <div class="amu">114.82</div>
+    </div>
+    <div class="postTransitionMetal" id="tin" onclick="openInfo(49)">
+      <div class="elementNumber">50</div>
+      <div class="symbol">Sn</div>
+      <div class="amu">118.71</div>
+    </div>
+    <div class="metalloid" id="antimony" onclick="openInfo(50)">
+      <div class="elementNumber">51</div>
+      <div class="symbol">Sb</div>
+      <div class="amu">121.76</div>
+    </div>
+    <div class="metalloid" id="tellurium" onclick="openInfo(51)">
+      <div class="elementNumber">52</div>
+      <div class="symbol">Te</div>
+      <div class="amu">127.60</div>
+    </div>
+    <div class="halogen" id="iodine" onclick="openInfo(52)">
+      <div class="elementNumber">53</div>
+      <div class="symbol">I</div>
+      <div class="amu">127.60</div>
+    </div>
+    <div class="nobleGas" id="xenon" onclick="openInfo(53)">
+      <div class="elementNumber">54</div>
+      <div class="symbol">Xe</div>
+      <div class="amu">131.29</div>
+    </div>
+    <div class="alkalaiMetal" id="cesium" onclick="openInfo(54)">
+      <div class="elementNumber">55</div>
+      <div class="symbol">Cs</div>
+      <div class="amu">132.91</div>
+    </div>
+    <div class="alkalineEarthMetal" id="barium" onclick="openInfo(55)">
+      <div class="elementNumber">56</div>
+      <div class="symbol">Ba</div>
+      <div class="amu">137.33</div>
+    </div>
+    <div class="placeHolder" id="lanthanides" onclick="placeholderInfo(1)">
+      <div class="placeHolderSymbol">Lanthanides</div>
+    </div>
+    <div class="lanthanides" id="lanthanum" onclick="openInfo(56)">
+      <div class="elementNumber">57</div>
+      <div class="symbol">La</div>
+      <div class="amu">138.91</div>
+    </div>
+    <div class="lanthanides" id="cerium" onclick="openInfo(57)">
+      <div class="elementNumber">58</div>
+      <div class="symbol">Ce</div>
+      <div class="amu">140.12</div>
+    </div>
+    <div class="lanthanides" id="praseodymium" onclick="openInfo(58)">
+      <div class="elementNumber">59</div>
+      <div class="symbol">Pr</div>
+      <div class="amu">140.91</div>
+    </div>
+    <div class="lanthanides" id="neodymium" onclick="openInfo(59)">
+      <div class="elementNumber">60</div>
+      <div class="symbol">Nd</div>
+      <div class="amu">144.24</div>
+    </div>
+    <div class="lanthanides" id="promethium" onclick="openInfo(60)">
+      <div class="elementNumber">61</div>
+      <div class="symbol">Pm</div>
+      <div class="amu">145.00</div>
+    </div>
+    <div class="lanthanides" id="samarium" onclick="openInfo(61)">
+      <div class="elementNumber">62</div>
+      <div class="symbol">Sm</div>
+      <div class="amu">150.36</div>
+    </div>
+    <div class="lanthanides" id="europium" onclick="openInfo(62)">
+      <div class="elementNumber">63</div>
+      <div class="symbol">Eu</div>
+      <div class="amu">151.96</div>
+    </div>
+    <div class="lanthanides" id="gadolinium" onclick="openInfo(63)">
+      <div class="elementNumber">64</div>
+      <div class="symbol">Gd</div>
+      <div class="amu">157.25</div>
+    </div>
+    <div class="lanthanides" id="terbium" onclick="openInfo(64)">
+      <div class="elementNumber">65</div>
+      <div class="symbol">Tb</div>
+      <div class="amu">158.93</div>
+    </div>
+    <div class="lanthanides" id="dysprosium" onclick="openInfo(65)">
+      <div class="elementNumber">66</div>
+      <div class="symbol">Dy</div>
+      <div class="amu">162.50</div>
+    </div>
+    <div class="lanthanides" id="holmium" onclick="openInfo(66)">
+      <div class="elementNumber">67</div>
+      <div class="symbol">Ho</div>
+      <div class="amu">164.93</div>
+    </div>
+    <div class="lanthanides" id="erbium" onclick="openInfo(67)">
+      <div class="elementNumber">68</div>
+      <div class="symbol">Er</div>
+      <div class="amu">167.26</div>
+    </div>
+    <div class="lanthanides" id="thulium" onclick="openInfo(68)">
+      <div class="elementNumber">69</div>
+      <div class="symbol">Tm</div>
+      <div class="amu">168.93</div>
+    </div>
+    <div class="lanthanides" id="ytterbium" onclick="openInfo(69)">
+      <div class="elementNumber">70</div>
+      <div class="symbol">Yb</div>
+      <div class="amu">173.05</div>
+    </div>
+    <div class="lanthanides" id="lutetium" onclick="openInfo(70)">
+      <div class="elementNumber">71</div>
+      <div class="symbol">Lu</div>
+      <div class="amu">174.97</div>
+    </div>
+    <div class="transitionMetal" id="hafnium" onclick="openInfo(71)">
+      <div class="elementNumber">72</div>
+      <div class="symbol">Hf</div>
+      <div class="amu">178.49</div>
+    </div>
+    <div class="transitionMetal" id="tantalum" onclick="openInfo(72)">
+      <div class="elementNumber">73</div>
+      <div class="symbol">Ta</div>
+      <div class="amu">180.95</div>
+    </div>
+    <div class="transitionMetal" id="tungsten" onclick="openInfo(73)">
+      <div class="elementNumber">74</div>
+      <div class="symbol">W</div>
+      <div class="amu">183.84</div>
+    </div>
+    <div class="transitionMetal" id="rhenium" onclick="openInfo(74)">
+      <div class="elementNumber">75</div>
+      <div class="symbol">Re</div>
+      <div class="amu">186.21</div>
+    </div>
+    <div class="transitionMetal" id="osmium" onclick="openInfo(75)">
+      <div class="elementNumber">76</div>
+      <div class="symbol">Os</div>
+      <div class="amu">190.23</div>
+    </div>
+    <div class="transitionMetal" id="iridium" onclick="openInfo(76)">
+      <div class="elementNumber">77</div>
+      <div class="symbol">Ir</div>
+      <div class="amu">192.22</div>
+    </div>
+    <div class="transitionMetal" id="platinum" onclick="openInfo(77)">
+      <div class="elementNumber">78</div>
+      <div class="symbol">Pt</div>
+      <div class="amu">195.08</div>
+    </div>
+    <div class="transitionMetal" id="gold" onclick="openInfo(78)">
+      <div class="elementNumber">79</div>
+      <div class="symbol">Au</div>
+      <div class="amu">196.97</div>
+    </div>
+    <div class="transitionMetal" id="mercury" onclick="openInfo(79)">
+      <div class="elementNumber">80</div>
+      <div class="symbol">Hg</div>
+      <div class="amu">200.97</div>
+    </div>
+    <div class="postTransitionMetal" id="thallium" onclick="openInfo(80)">
+      <div class="elementNumber">81</div>
+      <div class="symbol">Tl</div>
+      <div class="amu">204.38</div>
+    </div>
+    <div class="postTransitionMetal" id="lead" onclick="openInfo(81)">
+      <div class="elementNumber">82</div>
+      <div class="symbol">Pb</div>
+      <div class="amu">207.20</div>
+    </div>
+    <div class="postTransitionMetal" id="bismuth" onclick="openInfo(82)">
+      <div class="elementNumber">83</div>
+      <div class="symbol">Bi</div>
+      <div class="amu">208.98</div>
+    </div>
+    <div class="metalloid" id="polonium" onclick="openInfo(83)">
+      <div class="elementNumber">84</div>
+      <div class="symbol">Po</div>
+      <div class="amu">209.00</div>
+    </div>
+    <div class="halogen" id="astatine" onclick="openInfo(84)">
+      <div class="elementNumber">85</div>
+      <div class="symbol">At</div>
+      <div class="amu">210.00</div>
+    </div>
+    <div class="nobleGas" id="radon" onclick="openInfo(85)">
+      <div class="elementNumber">86</div>
+      <div class="symbol">Rn</div>
+      <div class="amu">222.00</div>
+    </div>
+    <div class="alkalaiMetal" id="francium" onclick="openInfo(86)">
+      <div class="elementNumber">87</div>
+      <div class="symbol">Fr</div>
+      <div class="amu">223.00</div>
+    </div>
+    <div class="alkalineEarthMetal" id="radium" onclick="openInfo(87)">
+      <div class="elementNumber">88</div>
+      <div class="symbol">Ra</div>
+      <div class="amu">226.00</div>
+    </div>
+    <div class="placeHolder" id="actinides" onclick="placeholderInfo(10)">
+      <div class="placeHolderSymbol">Actinides</div>
+    </div>
+    <div class="actinides" id="actinium" onclick="openInfo(88)">
+      <div class="elementNumber">89</div>
+      <div class="symbol">Ac</div>
+      <div class="amu">227.00</div>
+    </div>
+    <div class="actinides" id="thorium" onclick="openInfo(89)">
+      <div class="elementNumber">90</div>
+      <div class="symbol">Th</div>
+      <div class="amu">232.04</div>
+    </div>
+    <div class="actinides" id="protactinium" onclick="openInfo(90)">
+      <div class="elementNumber">91</div>
+      <div class="symbol">Pa</div>
+      <div class="amu">231.04</div>
+    </div>
+    <div class="actinides" id="uranium" onclick="openInfo(91)">
+      <div class="elementNumber">92</div>
+      <div class="symbol">U</div>
+      <div class="amu">238.03</div>
+    </div>
+    <div class="actinides" id="neptunium" onclick="openInfo(92)">
+      <div class="elementNumber">93</div>
+      <div class="symbol">Np</div>
+      <div class="amu">237.00</div>
+    </div>
+    <div class="actinides" id="plutonium" onclick="openInfo(93)">
+      <div class="elementNumber">94</div>
+      <div class="symbol">Pu</div>
+      <div class="amu">244.00</div>
+    </div>
+    <div class="actinides" id="americium" onclick="openInfo(94)">
+      <div class="elementNumber">95</div>
+      <div class="symbol">Am</div>
+      <div class="amu">243.00</div>
+    </div>
+    <div class="actinides" id="curium" onclick="openInfo(95)">
+      <div class="elementNumber">96</div>
+      <div class="symbol">Cm</div>
+      <div class="amu">247.00</div>
+    </div>
+    <div class="actinides" id="berkelium" onclick="openInfo(96)">
+      <div class="elementNumber">97</div>
+      <div class="symbol">Bk</div>
+      <div class="amu">247.00</div>
+    </div>
+    <div class="actinides" id="californium" onclick="openInfo(97)">
+      <div class="elementNumber">98</div>
+      <div class="symbol">Cf</div>
+      <div class="amu">251.00</div>
+    </div>
+    <div class="actinides" id="einsteinium" onclick="openInfo(98)">
+      <div class="elementNumber">99</div>
+      <div class="symbol">Es</div>
+      <div class="amu">252.00</div>
+    </div>
+    <div class="actinides" id="fermium" onclick="openInfo(99)">
+      <div class="elementNumber">100</div>
+      <div class="symbol">Fm</div>
+      <div class="amu">257.00</div>
+    </div>
+    <div class="actinides" id="mendelevium" onclick="openInfo(100)">
+      <div class="elementNumber">101</div>
+      <div class="symbol">Md</div>
+      <div class="amu">258.00</div>
+    </div>
+    <div class="actinides" id="nobelium" onclick="openInfo(101)">
+      <div class="elementNumber">102</div>
+      <div class="symbol">No</div>
+      <div class="amu">259.00</div>
+    </div>
+    <div class="actinides" id="lawrencium" onclick="openInfo(102)">
+      <div class="elementNumber">103</div>
+      <div class="symbol">Lr</div>
+      <div class="amu">262.00</div>
+    </div>
+    <div class="transitionMetal" id="rutherfordium" onclick="openInfo(103)">
+      <div class="elementNumber">104</div>
+      <div class="symbol">Rf</div>
+      <div class="amu">267.00</div>
+    </div>
+    <div class="transitionMetal" id="dubnium" onclick="openInfo(104)">
+      <div class="elementNumber">105</div>
+      <div class="symbol">Db</div>
+      <div class="amu">268.00</div>
+    </div>
+    <div class="transitionMetal" id="seaborgium" onclick="openInfo(105)">
+      <div class="elementNumber">106</div>
+      <div class="symbol">Sg</div>
+      <div class="amu">269.00</div>
+    </div>
+    <div class="transitionMetal" id="bohrium" onclick="openInfo(106)">
+      <div class="elementNumber">107</div>
+      <div class="symbol">Bh</div>
+      <div class="amu">270.00</div>
+    </div>
+    <div class="transitionMetal" id="hassium" onclick="openInfo(107)">
+      <div class="elementNumber">108</div>
+      <div class="symbol">Hs</div>
+      <div class="amu">269.00</div>
+    </div>
+    <div class="transitionMetal" id="meitnerium" onclick="openInfo(108)">
+      <div class="elementNumber">109</div>
+      <div class="symbol">Mt</div>
+      <div class="amu">278.00</div>
+    </div>
+    <div class="transitionMetal" id="darmstadtium" onclick="openInfo(109)">
+      <div class="elementNumber">110</div>
+      <div class="symbol">Ds</div>
+      <div class="amu">281.00</div>
+    </div>
+    <div class="transitionMetal" id="roentgenium" onclick="openInfo(110)">
+      <div class="elementNumber">111</div>
+      <div class="symbol">Rg</div>
+      <div class="amu">281.00</div>
+    </div>
+    <div class="transitionMetal" id="copernicium" onclick="openInfo(111)">
+      <div class="elementNumber">112</div>
+      <div class="symbol">Cn</div>
+      <div class="amu">285.00</div>
+    </div>
+    <div class="postTransitionMetal" id="nihonium" onclick="openInfo(112)">
+      <div class="elementNumber">113</div>
+      <div class="symbol">Nh</div>
+      <div class="amu">286.00</div>
+    </div>
+    <div class="postTransitionMetal" id="flerovium" onclick="openInfo(113)">
+      <div class="elementNumber">114</div>
+      <div class="symbol">Fl</div>
+      <div class="amu">289.00</div>
+    </div>
+    <div class="postTransitionMetal" id="moscovium" onclick="openInfo(114)">
+      <div class="elementNumber">115</div>
+      <div class="symbol">Mc</div>
+      <div class="amu">289.00</div>
+    </div>
+    <div class="postTransitionMetal" id="livermorium" onclick="openInfo(115)">
+      <div class="elementNumber">116</div>
+      <div class="symbol">Lv</div>
+      <div class="amu">293.00</div>
+    </div>
+    <div class="halogen" id="tennessine" onclick="openInfo(116)">
+      <div class="elementNumber">117</div>
+      <div class="symbol">Ts</div>
+      <div class="amu">294.00</div>
+    </div>
+    <div class="nobleGas" id="oganesson" onclick="openInfo(117)">
+      <div class="elementNumber">118</div>
+      <div class="symbol">Og</div>
+      <div class="amu">294.00</div>
+    </div>
+  </div>
+
+    <div class="classifyButtons">
+        <button class="button" id="keyChange" onclick="ENTrend()">Electronegativity Trend</button>
+        <button class="button" id="keyChange" onclick="radiusTrend()">Atomic Radius Trend</button>
+        <button class="button" id="keyChange" onclick="groupColor()">Vertical Group</button>
+    </div>
+
+  <div id="goBackButton" onclick="location.href='../homepage/index.html'">
+      <span class="clicker">HOME</span>
+  </div>
+
+</body>
+</html>
+
+</body>
+</html>

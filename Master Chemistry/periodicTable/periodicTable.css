@@ -1,0 +1,430 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+  background-image: url("Red.JPG");
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  text-shadow:
+    0 0 21px #ff0000,
+    0 0 41px #ff0000,
+    0 0 46px #ff0000,
+    0 0 51px #ff0000,
+    0 0 76px #ff0000;
+}
+
+.periodicTable {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  text-align: center;
+}
+
+/* element information pop up */
+.infoPopUp{
+  width: 200px;
+  border: 2px solid black;
+  background: gray;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 15px 15px 15px;
+  color: gray;
+  visibility: hidden;
+  transition: transform 0.2s, top 0.2s;
+}
+
+.open-popUp{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.button{
+  width: 100%;
+  padding: 10px; 
+  border-radius: 4px;
+  background: #6fd649;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer; 
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+.button:hover{background-color: #56ab37;}
+
+#topSymbol{
+  border: 2px solid black;
+  color: black;
+  font-size: 50px; 
+  margin-top: -50px;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 10px;
+}
+
+#elementName{
+  font-family: Arial;
+  font-size: 22px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#amu{
+  font-family: Arial;
+  font-size: 15px;
+  color: black;
+}
+
+#groupDefinition {
+  font-family: Arial;
+  font-size: 15px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#electroNegativity {
+  font-family: Arial;
+  font-size: 15px;
+  color: black;
+}
+
+#atomicRadius {
+  font-family: Arial;
+  font-size: 15px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+#infoCloseBtn{
+  padding: 10px;
+  font-size: 20px;
+}
+/*key change button*/
+.classifyButtons {
+  display: flex; 
+  align-items: center;
+  margin: 10px;
+}
+
+#keyChange{
+  margin: 10px;
+}
+
+/* each groups of element */
+.nonmetal{
+  background-color: azure;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 0 0px 20px #FFFF00, 0 0px 20px #FFFF00;
+  transition: transform .2s;
+  color: black;
+}
+.nonmetal:hover{transform: scale(1.5);}
+
+.alkalaiMetal{
+  padding: 10px;
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.alkalaiMetal:hover{transform: scale(1.5);}
+
+.alkalineEarthMetal{
+  padding: 10px; 
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.alkalineEarthMetal:hover{transform: scale(1.5);}
+
+.metalloid{
+  padding: 10px;
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.metalloid:hover{transform: scale(1.5);}
+
+.transitionMetal{
+  padding: 10px; 
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.transitionMetal:hover{transform: scale(1.5);}
+
+.halogen{
+  padding: 10px; 
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.halogen:hover{transform: scale(1.5);}
+
+.nobleGas{
+  padding: 10px;
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.nobleGas:hover{transform: scale(1.5);}
+
+.postTransitionMetal{
+  padding: 10px;
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.postTransitionMetal:hover{transform: scale(1.5);}
+
+.lanthanides{
+  padding: 10px;
+  border: 2px solid black; 
+  transition: transform .2s;
+  color: black;
+}
+.lanthanides:hover{transform: scale(1.5);}
+
+.actinides{
+  padding: 10px;
+  border: 2px solid black; 
+  transition: transform .2s;
+  color: black;
+}
+.actinides:hover{transform: scale(1.5);}
+
+.unknown{
+  padding: 10px;
+  border: 2px solid black;
+  transition: transform .2s;
+  color: black;
+}
+.unknown:hover{transform: scale(1.5);}
+
+.placeHolder {
+  border: 2px solid black;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  transition: transform .2s;
+  color: black;
+}
+.placeHolder:hover{transform: scale(1.5);}
+.placeHolderSymbol{
+  position: relative; 
+  top: 40%;
+  font-size: 0.9vw;
+}
+
+/* for each elements */
+.symbol{
+  font-size: 20px;
+}
+
+.elementNumber{
+  font-size: 10px;
+  text-align: left;
+}
+
+.amu{
+  font-size: 10px;
+}
+
+/*keys*/
+/*keys for element groups*/
+#groupKey1 { grid-area: 1 / 5 / 4 / 9; }
+#groupKey2 { grid-area: 1 / 9 / 4 / 13; }
+
+.key {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  color: white; 
+  text-shadow: 0 0px 10px red, 0 0px 10px red;
+}
+
+.keyBox {
+  border: 2px solid black;
+  width: 20px;
+  height: 20px;
+  background-color: #ffcc00; /* Change color as needed */
+  margin-right: 10px;
+}
+
+/*keys for electronegativity trend*/
+#trendKey{ grid-area: 2 / 4 / 3 / 12; }
+#trendGradient {
+  border: 2px solid black;
+  display: flex;
+  height: 50px;
+  background-color: red; 
+  background-image: linear-gradient(to right, yellow, orange, red);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: black;
+  box-shadow: 0 0px 20px red, 0 0px 20px red;
+}
+
+/*INDIVIDUAL ELEMENTS*/
+#hydrogen { grid-area: 1 / 1 / 2 / 2; }
+#helium { grid-area: 1 / 18 / 2 / 19; }
+#lithium { grid-area: 2 / 1 / 3 / 2; }
+#beryllium { grid-area: 2 / 2 / 3 / 3; }
+#boron { grid-area: 2 / 13 / 3 / 14; }
+#carbon { grid-area: 2 / 14 / 3 / 15; }
+#nitrogen { grid-area: 2 / 15 / 3 / 16; }
+#oxygen { grid-area: 2 / 16 / 3 / 17; }
+#fluorine { grid-area: 2 / 17 / 3 / 18; }
+#neon { grid-area: 2 / 18 / 3 / 19; }
+#sodium { grid-area: 3 / 1 / 4 / 2; }
+#magnesium { grid-area: 3 / 2 / 4 / 3; }
+#aluminum { grid-area: 3 / 13 / 4 / 14; }
+#silicon { grid-area: 3 / 14 / 4 / 15; }
+#phosphorus { grid-area: 3 / 15 / 4 / 16; }
+#sulfur { grid-area: 3 / 16 / 4 / 17; }
+#chlorine { grid-area: 3 / 17 / 4 / 18; }
+#argon { grid-area: 3 / 18 / 4 / 19; }
+#potassium { grid-area: 4 / 1 / 5 / 2; }
+#calcium { grid-area: 4 / 2 / 5 / 3; }
+#scandium { grid-area: 4 / 3 / 5 / 4; }
+#titanium { grid-area: 4 / 4 / 5 / 5; }
+#vanadium { grid-area: 4 / 5 / 5 / 6; }
+#chromium { grid-area: 4 / 6 / 5 / 7; }
+#manganese { grid-area: 4 / 7 / 5 / 8; }
+#iron { grid-area: 4 / 8 / 5 / 9; }
+#cobalt { grid-area: 4 / 9 / 5 / 10; }
+#nickel { grid-area: 4 / 10 / 5 / 11; }
+#copper { grid-area: 4 / 11 / 5 / 12; }
+#zinc { grid-area: 4 / 12 / 5 / 13; }
+#gallium { grid-area: 4 / 13 / 5 / 14; }
+#germanium { grid-area: 4 / 14 / 5 / 15; }
+#arsenic { grid-area: 4 / 15 / 5 / 16; }
+#selenium { grid-area: 4 / 16 / 5 / 17; }
+#bromine { grid-area: 4 / 17 / 5 / 18; }
+#krypton { grid-area: 4 / 18 / 5 / 19; }
+#rubidium { grid-area: 5 / 1 / 6 / 2; }
+#strontium { grid-area: 5 / 2 / 6 / 3; }
+#yttrium { grid-area: 5 / 3 / 6 / 4; }
+#zirconium { grid-area: 5 / 4 / 6 / 5; }
+#niobium { grid-area: 5 / 5 / 6 / 6; }
+#molybdenum { grid-area: 5 / 6 / 6 / 7; }
+#technetium { grid-area: 5 / 7 / 6 / 8; }
+#ruthenium { grid-area: 5 / 8 / 6 / 9; }
+#rhodium { grid-area: 5 / 9 / 6 / 10; }
+#palladium { grid-area: 5 / 10 / 6 / 11; }
+#silver { grid-area: 5 / 11 / 6 / 12; }
+#cadmium { grid-area: 5 / 12 / 6 / 13; }
+#indium { grid-area: 5 / 13 / 6 / 14; }
+#tin { grid-area: 5 / 14 / 6 / 15; }
+#antimony { grid-area: 5 / 15 / 6 / 16; }
+#tellurium { grid-area: 5 / 16 / 6 / 17; }
+#iodine { grid-area: 5 / 17 / 6 / 18; }
+#xenon { grid-area: 5 / 18 / 6 / 19; }
+#cesium { grid-area: 6 / 1 / 7 / 2; }
+#barium { grid-area: 6 / 2 / 7 / 3; }
+#lanthanides { grid-area: 6 / 3 / 7 / 4; }
+#lanthanum { grid-area: 8 / 4 / 9 / 5; }
+#cerium { grid-area: 8 / 5 / 9 / 6; }
+#praseodymium { grid-area: 8 / 6 / 9 / 7; }
+#neodymium { grid-area: 8 / 7 / 9 / 8; }
+#promethium { grid-area: 8 / 8 / 9 / 9; }
+#samarium { grid-area: 8 / 9 / 9 / 10; }
+#europium { grid-area: 8 / 10 / 9 / 11; }
+#gadolinium { grid-area: 8 / 11 / 9 / 12; }
+#terbium { grid-area: 8 / 12 / 9 / 13; }
+#dysprosium { grid-area: 8 / 13 / 9 / 14; }
+#holmium { grid-area: 8 / 14 / 9 / 15; }
+#erbium { grid-area: 8 / 15 / 9 / 16; }
+#thulium { grid-area: 8 / 16 / 9 / 17; }
+#ytterbium { grid-area: 8 / 17 / 9 / 18; }
+#lutetium { grid-area: 8 / 18 / 9 / 19; }
+#hafnium { grid-area: 6 / 4 / 7 / 5; }
+#tantalum { grid-area: 6 / 5 / 7 / 6; }
+#tungsten { grid-area: 6 / 6 / 7 / 7; }
+#rhenium { grid-area: 6 / 7 / 7 / 8; }
+#osmium { grid-area: 6 / 8 / 7 / 9; }
+#iridium { grid-area: 6 / 9 / 7 / 10; }
+#platinum { grid-area: 6 / 10 / 7 / 11; }
+#gold { grid-area: 6 / 11 / 7 / 12; }
+#mercury { grid-area: 6 / 12 / 7 / 13; }
+#thallium { grid-area: 6 / 13 / 7 / 14; }
+#lead { grid-area: 6 / 14 / 7 / 15; }
+#bismuth { grid-area: 6 / 15 / 7 / 16; }
+#polonium { grid-area: 6 / 16 / 7 / 17; }
+#astatine { grid-area: 6 / 17 / 7 / 18; }
+#radon { grid-area: 6 / 18 / 7 / 19; }
+#francium { grid-area: 7 / 1 / 8 / 2; }
+#radium { grid-area: 7 / 2 / 8 / 3; }
+#actinides { grid-area: 7 / 3 / 8 / 4; }
+#actinium { grid-area: 9 / 4 / 10 / 5; }
+#thorium { grid-area: 9 / 5 / 10 / 6; }
+#protactinium { grid-area: 9 / 6 / 10 / 7; }
+#uranium { grid-area: 9 / 7 / 10 / 8; }
+#neptunium { grid-area: 9 / 8 / 10 / 9; }
+#plutonium { grid-area: 9 / 9 / 10 / 10; }
+#americium { grid-area: 9 / 10 / 10 / 11; }
+#curium { grid-area: 9 / 11 / 10 / 12; }
+#berkelium { grid-area: 9 / 12 / 10 / 13; }
+#californium { grid-area: 9 / 13 / 10 / 14; }
+#einsteinium { grid-area: 9 / 14 / 10 / 15; }
+#fermium { grid-area: 9 / 15 / 10 / 16; }
+#mendelevium { grid-area: 9 / 16 / 10 / 17; }
+#nobelium { grid-area: 9 / 17 / 10 / 18; }
+#lawrencium { grid-area: 9 / 18 / 10 / 19; }
+#rutherfordium { grid-area: 7 / 4 / 8 / 5; }
+#dubnium { grid-area: 7 / 5 / 8 / 6; }
+#seaborgium { grid-area: 7 / 6 / 8 / 7; }
+#bohrium { grid-area: 7 / 7 / 8 / 8; }
+#hassium { grid-area: 7 / 8 / 8 / 9; }
+#meitnerium { grid-area: 7 / 9 / 8 / 10; }
+#darmstadtium { grid-area: 7 / 10 / 8 / 11; }
+#roentgenium { grid-area: 7 / 11 / 8 / 12; }
+#copernicium { grid-area: 7 / 12 / 8 / 13; }
+#nihonium { grid-area: 7 / 13 / 8 / 14; }
+#flerovium { grid-area: 7 / 14 / 8 / 15; }
+#moscovium { grid-area: 7 / 15 / 8 / 16; }
+#livermorium { grid-area: 7 / 16 / 8 / 17; }
+#tennessine { grid-area: 7 / 17 / 8 / 18; }
+#oganesson { grid-area: 7 / 18 / 8 / 19; }
+
+/*go back button*/
+
+
+#goBackButton{
+padding: 10px; 
+border-radius: 4px;
+background: red;
+color: #fff;
+font-size: 20px;
+cursor: pointer; 
+box-shadow: 0 0 20px red, 0 0 20px red;
+transition: background-color 0.3s ease-in-out;
+text-align: center;
+margin: 20px;
+}
+
+#goBackButton:hover{
+background-color: white;
+}
+#goBackButton:hover .clicker {
+color: black;
+}
