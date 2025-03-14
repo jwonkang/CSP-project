@@ -104,8 +104,8 @@ for (let i = 0; i < elementNames.length; i++) {
       elementName.style.backgroundColor = "#CA8BFF"; // light purple
       elementName.style.boxShadow = "0 0px 20px #CA8BFF, 0 0px 20px #CA8BFF";
   } else if (elementName && elementName.classList.contains("transitionMetal")) {
-      elementName.style.backgroundColor = "#68D8FF"; // light cyan
-      elementName.style.boxShadow = "0 0px 20px #68D8FF, 0 0px 20px #68D8FF";
+      elementName.style.backgroundColor = "#2853ff"; // light cyan
+      elementName.style.boxShadow = "0 0px 20px #2853ff, 0 0px 20px #2853ff";
   } else if (elementName && elementName.classList.contains("postTransitionMetal")) {
       elementName.style.backgroundColor = "#B3FF02"; // lime green
       elementName.style.boxShadow = "0 0px 20px #B3FF02, 0 0px 20px #B3FF02";
@@ -291,8 +291,8 @@ function groupColor(){
           elementName.style.backgroundColor = "#CA8BFF"; // light purple
           elementName.style.boxShadow = "0 0px 20px #CA8BFF, 0 0px 20px #CA8BFF";
       } else if (elementName && elementName.classList.contains("transitionMetal")) {
-          elementName.style.backgroundColor = "#68D8FF"; // light cyan
-          elementName.style.boxShadow = "0 0px 20px #68D8FF, 0 0px 20px #68D8FF";
+          elementName.style.backgroundColor = "#2853ff"; // light cyan
+          elementName.style.boxShadow = "0 0px 20px #2853ff, 0 0px 20px #2853ff";
       } else if (elementName && elementName.classList.contains("postTransitionMetal")) {
           elementName.style.backgroundColor = "#B3FF02"; // lime green
           elementName.style.boxShadow = "0 0px 20px #B3FF02, 0 0px 20px #B3FF02";
