@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>academicSearcher</title>
+	<link rel="stylesheet" href="academicSearcher.css">
+</head>
+<body>
+	<h1>Academic Support Schedule</h1>
+	<table id ="academicTable">
+		<tr>
+			<th>Time</th>
+			<th>Monday</th>
+			<th>Tuesday</th>
+			<th>Wednesday</th>
+			<th>Thursday</th>
+			<th>Friday</th>
+		</tr>
+	</table>
+	
+	<form id="addMeetingForm">
+		<select id="day">
+			<option value = "Monday">Monday</option>
+			<option value = "Tuesday">Tuesday</option>
+			<option value = "Wednesday">Wednesday</option>
+			<option value = "Thursday">Thursday</option>
+			<option value = "Friday">Friday</option>
+		</select>
+
+		<select id="time"></select>
+		<input type="text" id="studentName" placeholder="student Name" required>
+		<button type="submit" id="submitBtn">Add Meeting</button>
+	</form>
+
+	<a href="../" id="goBackButton"><span class="clicker">HOME</span></a>
+
+	<script src="academicSearcher.js"></script>
+</body>
+</html>
+
