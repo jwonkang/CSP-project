@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" href="gradeCalc.css">
+</head>
+
+<body>
+  <h1>Purple Grade Calculator</h1>
+
+  <form id="gradeForm">
+      <input type="number" id="totalPoints" placeholder="Total Points" required min="1">
+      <input type="number" id="earnedPoints" placeholder="Points Earned" required min="0">
+      <button type="submit">Calculate Grade</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <script src="gradeCalc.js"></script>
+
+    <div id="goBackButton" onclick="location.href='../homepage/index.html'">
+        <span class="clicker">HOME</span>
+    </div>
+</body>
+</html>
