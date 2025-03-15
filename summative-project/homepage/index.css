@@ -1,0 +1,97 @@
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 100px;
+  text-shadow: 0 0 30px #ffffff, 0 0 50px #ffffff;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+  background-image: url("img/CSP_FINAL.png");
+}
+
+.footer {
+  position: relative;
+  bottom: 0; 
+  left: 0;
+  width: 100%; 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.section {
+  width: 25%;
+  color: white;
+  text-align: center;
+}
+
+.button{
+  width: 80%;
+  padding: 10px 0; 
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer; 
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+}
+.button:hover{background-color: #ffffff; color: #000000}
+
+.red {
+  background: #FF4500;
+  box-shadow: 0 0 20px #FF4500, 0 0 40px #FF4500;
+}
+
+.orange {
+  background: #FF6A00;
+  box-shadow: 0 0 20px #FF6A00, 0 0 40px #FF6A00;
+}
+
+.yellow {
+  background: #ffe016;
+  box-shadow: 0 0 20px #FFD600, 0 0 40px #FFD600;
+}
+
+.green {
+  background: #50ae36;
+  box-shadow: 0 0 20px #50ae36, 0 0 40px #50ae36;
+}
+
+.blue {
+  background: #5748ff;
+  box-shadow: 0 0 20px #5748ff, 0 0 40px #5748ff;
+}
+
+.purple {
+  background: #c823ed;
+  box-shadow: 0 0 20px #c823ed, 0 0 40px #c823ed;
+}
+
+.black {
+  background: #000000;
+  box-shadow: 0 0 20px #0D0D0D, 0 0 40px #0D0D0D;
+}
+
+#topHeader{
+  text-align: center;
+  padding: 250px;
+  background-image: url("1000_F_784367051_SXAFBAYFMv1axxuG6TLYCn0kuYh1nKtB.jpg");
+}
